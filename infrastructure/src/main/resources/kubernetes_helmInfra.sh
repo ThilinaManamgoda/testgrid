@@ -144,8 +144,9 @@ function install_helm(){
   then
     wget https://get.helm.sh/helm-v3.0.0-alpha.2-linux-amd64.tar.gz
     tar -zxvf helm-v3.0.0-alpha.2-linux-amd64.tar.gz
-    sudo mv linux-amd64/helm /usr/bin
-    ~/usr/bin/helm init
+    sudo chmod +x linux-amd64/helm
+    sudo mv linux-amd64/helm /usr/local/bin
+    helm init
     helm version
   fi
 }
